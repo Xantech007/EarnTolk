@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>TikTok - Make Your Day</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -85,13 +85,13 @@
         }
     </style>
 </head>
-<body class="bg-black text-white font-sans antialiased select-none overflow-hidden h-screen w-screen">
+<body class="bg-black text-white font-sans antialiased select-none overflow-hidden h-screen h-[100dvh] w-screen">
 
     <!-- MAIN CONTAINER -->
-    <div class="relative w-full h-full max-w-md md:max-w-md mx-auto bg-tiktok-dark overflow-hidden flex flex-col shadow-2xl border-x border-gray-900">
+    <div class="relative w-full h-full max-w-md mx-auto bg-tiktok-dark overflow-hidden flex flex-col shadow-2xl border-x border-gray-900">
 
         <!-- TOP HEADER NAVBAR -->
-        <header class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-4 py-3 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-auto">
+        <header class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-4 pt-3 pb-2 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-auto">
             <!-- LIVE Button -->
             <button class="flex items-center space-x-1 text-white/90 hover:text-white transition group">
                 <i data-lucide="tv" class="w-6 h-6 text-white group-hover:scale-105 transition"></i>
@@ -118,7 +118,7 @@
         </header>
 
         <!-- SCROLLABLE VIDEO FEED -->
-        <main id="video-feed" class="w-full h-full overflow-y-scroll snap-y-mandatory no-scrollbar relative flex-1">
+        <main id="video-feed" class="w-full h-full overflow-y-scroll snap-y-mandatory no-scrollbar relative flex-1 pb-16">
             
             <!-- VIDEO CARD 1 -->
             <section class="video-card snap-start relative w-full h-full flex-shrink-0 bg-black overflow-hidden" data-id="1" data-liked="false" data-bookmarked="false" data-likes="142500" data-comments="2380" data-username="@alex_cyberpunk" data-desc="Exploring the neon city at midnight! 🌃 High energy vibes always #cyberpunk #neon #citylights #nightwalk #vibes" data-audio="Original Sound - @alex_cyberpunk">
@@ -135,10 +135,10 @@
                 </div>
 
                 <!-- RIGHT SIDE ACTIONS COLUMN -->
-                <div class="absolute right-3 bottom-20 z-20 flex flex-col items-center space-y-5">
+                <div class="absolute right-3 bottom-24 z-20 flex flex-col items-center space-y-4">
                     <!-- Profile Avatar + Follow Badge -->
                     <div class="relative group cursor-pointer" onclick="showToast('Viewing @alex_cyberpunk profile')">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-lg group-hover:scale-105 transition">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" class="w-11 h-11 rounded-full border-2 border-white object-cover shadow-lg group-hover:scale-105 transition">
                         <button onclick="event.stopPropagation(); toggleFollow(this)" class="follow-btn absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-tiktok-red hover:bg-red-600 text-white rounded-full p-0.5 shadow-md transition transform active:scale-90">
                             <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                         </button>
@@ -146,52 +146,52 @@
 
                     <!-- Like Button -->
                     <div class="flex flex-col items-center">
-                        <button onclick="toggleLike(this)" class="like-btn p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="heart" class="w-8 h-8 transition-colors"></i>
+                        <button onclick="toggleLike(this)" class="like-btn p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="heart" class="w-7 h-7 transition-colors drop-shadow-md"></i>
                         </button>
                         <span class="like-count text-xs font-semibold drop-shadow-md mt-0.5">142.5K</span>
                     </div>
 
                     <!-- Comment Button -->
                     <div class="flex flex-col items-center">
-                        <button onclick="openComments('1')" class="p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="message-circle" class="w-8 h-8 drop-shadow-md"></i>
+                        <button onclick="openComments('1')" class="p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="message-circle" class="w-7 h-7 drop-shadow-md"></i>
                         </button>
                         <span class="comment-count text-xs font-semibold drop-shadow-md mt-0.5">2,380</span>
                     </div>
 
                     <!-- Bookmark / Favorite Button -->
                     <div class="flex flex-col items-center">
-                        <button onclick="toggleBookmark(this)" class="bookmark-btn p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="bookmark" class="w-8 h-8 transition-colors drop-shadow-md"></i>
+                        <button onclick="toggleBookmark(this)" class="bookmark-btn p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="bookmark" class="w-7 h-7 transition-colors drop-shadow-md"></i>
                         </button>
                         <span class="bookmark-count text-xs font-semibold drop-shadow-md mt-0.5">18.4K</span>
                     </div>
 
                     <!-- Share Button -->
                     <div class="flex flex-col items-center">
-                        <button onclick="openShareModal()" class="p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="share-2" class="w-8 h-8 drop-shadow-md"></i>
+                        <button onclick="openShareModal()" class="p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="share-2" class="w-7 h-7 drop-shadow-md"></i>
                         </button>
                         <span class="text-xs font-semibold drop-shadow-md mt-0.5">4,120</span>
                     </div>
 
                     <!-- Audio Vinyl Spinner -->
-                    <div class="mt-2 cursor-pointer" onclick="showToast('Audio: Original Sound - @alex_cyberpunk')">
-                        <div class="w-10 h-10 rounded-full bg-gray-900 border-2 border-gray-700 flex items-center justify-center animate-spin-slow music-disc-glow relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="w-6 h-6 rounded-full object-cover">
+                    <div class="mt-1 cursor-pointer" onclick="showToast('Audio: Original Sound - @alex_cyberpunk')">
+                        <div class="w-9 h-9 rounded-full bg-gray-900 border-2 border-gray-700 flex items-center justify-center animate-spin-slow music-disc-glow relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="w-5 h-5 rounded-full object-cover">
                         </div>
                     </div>
                 </div>
 
                 <!-- BOTTOM OVERLAY DETAILS -->
-                <div class="absolute bottom-16 left-0 right-16 z-20 p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none">
+                <div class="absolute bottom-20 left-0 right-16 z-20 p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="font-bold text-base drop-shadow-md hover:underline cursor-pointer inline-block" onclick="showToast('@alex_cyberpunk')">@alex_cyberpunk</h3>
                         <p class="text-sm mt-1 text-gray-100 line-clamp-2 leading-snug drop-shadow-sm">Exploring the neon city at midnight! 🌃 High energy vibes always <span class="font-semibold text-tiktok-cyan cursor-pointer">#cyberpunk</span> <span class="font-semibold text-tiktok-cyan cursor-pointer">#neon</span></p>
                         
                         <!-- Marquee Audio Banner -->
-                        <div class="flex items-center space-x-2 mt-3 text-xs font-medium text-gray-200">
+                        <div class="flex items-center space-x-2 mt-2 text-xs font-medium text-gray-200">
                             <i data-lucide="music" class="w-3.5 h-3.5 animate-pulse text-tiktok-cyan"></i>
                             <div class="overflow-hidden w-48 relative h-4">
                                 <div class="whitespace-nowrap animate-marquee absolute inset-0">
@@ -215,57 +215,55 @@
                     </div>
                 </div>
 
-                <!-- RIGHT SIDE ACTIONS COLUMN -->
-                <div class="absolute right-3 bottom-20 z-20 flex flex-col items-center space-y-5">
+                <div class="absolute right-3 bottom-24 z-20 flex flex-col items-center space-y-4">
                     <div class="relative group cursor-pointer" onclick="showToast('Viewing @chef_mario profile')">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-lg group-hover:scale-105 transition">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="w-11 h-11 rounded-full border-2 border-white object-cover shadow-lg group-hover:scale-105 transition">
                         <button onclick="event.stopPropagation(); toggleFollow(this)" class="follow-btn absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-tiktok-red hover:bg-red-600 text-white rounded-full p-0.5 shadow-md transition transform active:scale-90">
                             <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                         </button>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="toggleLike(this)" class="like-btn p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="heart" class="w-8 h-8 transition-colors"></i>
+                        <button onclick="toggleLike(this)" class="like-btn p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="heart" class="w-7 h-7 transition-colors drop-shadow-md"></i>
                         </button>
                         <span class="like-count text-xs font-semibold drop-shadow-md mt-0.5">892K</span>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="openComments('2')" class="p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="message-circle" class="w-8 h-8 drop-shadow-md"></i>
+                        <button onclick="openComments('2')" class="p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="message-circle" class="w-7 h-7 drop-shadow-md"></i>
                         </button>
                         <span class="comment-count text-xs font-semibold drop-shadow-md mt-0.5">9,410</span>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="toggleBookmark(this)" class="bookmark-btn p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="bookmark" class="w-8 h-8 transition-colors drop-shadow-md"></i>
+                        <button onclick="toggleBookmark(this)" class="bookmark-btn p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="bookmark" class="w-7 h-7 transition-colors drop-shadow-md"></i>
                         </button>
                         <span class="bookmark-count text-xs font-semibold drop-shadow-md mt-0.5">52.1K</span>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="openShareModal()" class="p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="share-2" class="w-8 h-8 drop-shadow-md"></i>
+                        <button onclick="openShareModal()" class="p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="share-2" class="w-7 h-7 drop-shadow-md"></i>
                         </button>
                         <span class="text-xs font-semibold drop-shadow-md mt-0.5">12.8K</span>
                     </div>
 
-                    <div class="mt-2 cursor-pointer" onclick="showToast('Audio: Delicious Cooking Beats')">
-                        <div class="w-10 h-10 rounded-full bg-gray-900 border-2 border-gray-700 flex items-center justify-center animate-spin-slow music-disc-glow relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="w-6 h-6 rounded-full object-cover">
+                    <div class="mt-1 cursor-pointer" onclick="showToast('Audio: Delicious Cooking Beats')">
+                        <div class="w-9 h-9 rounded-full bg-gray-900 border-2 border-gray-700 flex items-center justify-center animate-spin-slow music-disc-glow relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="w-5 h-5 rounded-full object-cover">
                         </div>
                     </div>
                 </div>
 
-                <!-- BOTTOM OVERLAY DETAILS -->
-                <div class="absolute bottom-16 left-0 right-16 z-20 p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none">
+                <div class="absolute bottom-20 left-0 right-16 z-20 p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="font-bold text-base drop-shadow-md hover:underline cursor-pointer inline-block" onclick="showToast('@chef_mario')">@chef_mario</h3>
                         <p class="text-sm mt-1 text-gray-100 line-clamp-2 leading-snug drop-shadow-sm">Making the ULTIMATE crispy artisan garlic bread 🥖🧄 Would you eat this whole loaf? <span class="font-semibold text-tiktok-cyan cursor-pointer">#foodie</span> <span class="font-semibold text-tiktok-cyan cursor-pointer">#recipe</span></p>
                         
-                        <div class="flex items-center space-x-2 mt-3 text-xs font-medium text-gray-200">
+                        <div class="flex items-center space-x-2 mt-2 text-xs font-medium text-gray-200">
                             <i data-lucide="music" class="w-3.5 h-3.5 animate-pulse text-tiktok-cyan"></i>
                             <div class="overflow-hidden w-48 relative h-4">
                                 <div class="whitespace-nowrap animate-marquee absolute inset-0">
@@ -289,57 +287,55 @@
                     </div>
                 </div>
 
-                <!-- RIGHT SIDE ACTIONS COLUMN -->
-                <div class="absolute right-3 bottom-20 z-20 flex flex-col items-center space-y-5">
+                <div class="absolute right-3 bottom-24 z-20 flex flex-col items-center space-y-4">
                     <div class="relative group cursor-pointer" onclick="showToast('Viewing @nature_escapes profile')">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-lg group-hover:scale-105 transition">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" class="w-11 h-11 rounded-full border-2 border-white object-cover shadow-lg group-hover:scale-105 transition">
                         <button onclick="event.stopPropagation(); toggleFollow(this)" class="follow-btn absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-tiktok-red hover:bg-red-600 text-white rounded-full p-0.5 shadow-md transition transform active:scale-90">
                             <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                         </button>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="toggleLike(this)" class="like-btn p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="heart" class="w-8 h-8 transition-colors"></i>
+                        <button onclick="toggleLike(this)" class="like-btn p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="heart" class="w-7 h-7 transition-colors drop-shadow-md"></i>
                         </button>
                         <span class="like-count text-xs font-semibold drop-shadow-md mt-0.5">320.1K</span>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="openComments('3')" class="p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="message-circle" class="w-8 h-8 drop-shadow-md"></i>
+                        <button onclick="openComments('3')" class="p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="message-circle" class="w-7 h-7 drop-shadow-md"></i>
                         </button>
                         <span class="comment-count text-xs font-semibold drop-shadow-md mt-0.5">1,540</span>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="toggleBookmark(this)" class="bookmark-btn p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="bookmark" class="w-8 h-8 transition-colors drop-shadow-md"></i>
+                        <button onclick="toggleBookmark(this)" class="bookmark-btn p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="bookmark" class="w-7 h-7 transition-colors drop-shadow-md"></i>
                         </button>
                         <span class="bookmark-count text-xs font-semibold drop-shadow-md mt-0.5">31.2K</span>
                     </div>
 
                     <div class="flex flex-col items-center">
-                        <button onclick="openShareModal()" class="p-2 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
-                            <i data-lucide="share-2" class="w-8 h-8 drop-shadow-md"></i>
+                        <button onclick="openShareModal()" class="p-1.5 rounded-full hover:bg-white/10 transition active:scale-75 text-white">
+                            <i data-lucide="share-2" class="w-7 h-7 drop-shadow-md"></i>
                         </button>
                         <span class="text-xs font-semibold drop-shadow-md mt-0.5">8,900</span>
                     </div>
 
-                    <div class="mt-2 cursor-pointer" onclick="showToast('Audio: Chill Lofi Ambient Rain')">
-                        <div class="w-10 h-10 rounded-full bg-gray-900 border-2 border-gray-700 flex items-center justify-center animate-spin-slow music-disc-glow relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" class="w-6 h-6 rounded-full object-cover">
+                    <div class="mt-1 cursor-pointer" onclick="showToast('Audio: Chill Lofi Ambient Rain')">
+                        <div class="w-9 h-9 rounded-full bg-gray-900 border-2 border-gray-700 flex items-center justify-center animate-spin-slow music-disc-glow relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" class="w-5 h-5 rounded-full object-cover">
                         </div>
                     </div>
                 </div>
 
-                <!-- BOTTOM OVERLAY DETAILS -->
-                <div class="absolute bottom-16 left-0 right-16 z-20 p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none">
+                <div class="absolute bottom-20 left-0 right-16 z-20 p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="font-bold text-base drop-shadow-md hover:underline cursor-pointer inline-block" onclick="showToast('@nature_escapes')">@nature_escapes</h3>
                         <p class="text-sm mt-1 text-gray-100 line-clamp-2 leading-snug drop-shadow-sm">Serene sunset above the clouds in the Swiss Alps 🏔️ Real peace exists right here. <span class="font-semibold text-tiktok-cyan cursor-pointer">#travel</span> <span class="font-semibold text-tiktok-cyan cursor-pointer">#mountains</span></p>
                         
-                        <div class="flex items-center space-x-2 mt-3 text-xs font-medium text-gray-200">
+                        <div class="flex items-center space-x-2 mt-2 text-xs font-medium text-gray-200">
                             <i data-lucide="music" class="w-3.5 h-3.5 animate-pulse text-tiktok-cyan"></i>
                             <div class="overflow-hidden w-48 relative h-4">
                                 <div class="whitespace-nowrap animate-marquee absolute inset-0">
@@ -352,8 +348,8 @@
             </section>
         </main>
 
-        <!-- BOTTOM MOBILE NAVIGATION BAR -->
-        <nav class="absolute bottom-0 left-0 right-0 z-30 bg-black/95 border-t border-gray-800 px-3 py-2 flex items-center justify-around text-xs font-medium">
+        <!-- FIXED BOTTOM MOBILE NAVBAR -->
+        <nav class="absolute bottom-0 left-0 right-0 z-40 bg-black/95 border-t border-gray-800 px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] flex items-center justify-around text-xs font-medium">
             <button onclick="switchNavTab('home')" id="nav-home" class="flex flex-col items-center text-white space-y-0.5">
                 <i data-lucide="home" class="w-6 h-6"></i>
                 <span>Home</span>
@@ -364,9 +360,9 @@
             </button>
             <!-- Create Button (+) with TikTok Dual-Glow Effect -->
             <button onclick="showToast('Create Video Camera feature')" class="relative flex items-center justify-center group active:scale-95 transition">
-                <div class="w-11 h-7 rounded-lg bg-tiktok-cyan absolute -left-1"></div>
-                <div class="w-11 h-7 rounded-lg bg-tiktok-red absolute -right-1"></div>
-                <div class="w-11 h-7 rounded-lg bg-white relative flex items-center justify-center text-black">
+                <div class="w-10 h-7 rounded-lg bg-tiktok-cyan absolute -left-1"></div>
+                <div class="w-10 h-7 rounded-lg bg-tiktok-red absolute -right-1"></div>
+                <div class="w-10 h-7 rounded-lg bg-white relative flex items-center justify-center text-black">
                     <i data-lucide="plus" class="w-5 h-5 stroke-[3]"></i>
                 </div>
             </button>
